@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/comicListFragment">
+    <fragment
+        android:id="@+id/comicListFragment"
+        android:name="com.harishd.comiclist.feature.comicList.screens.ComicListFragment"
+        android:label="fragment_comic_list"
+        tools:layout="@layout/fragment_comic_list">
+        <action
+            android:id="@+id/action_comicListFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+        <action
+            android:id="@+id/action_comicListFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/comicDetailsFragment"
+        android:name="com.harishd.comiclist.feature.details.screens.ComicDetailsFragment"
+        android:label="ComicDetailsFragment"
+        tools:layout="@layout/fragment_comic_details">
+        <argument
+            android:name="comicItem"
+            app:argType="com.harishd.comiclist.feature.comicList.module.view.ComicItemView"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_comicDetailsFragment_to_favoriteListFragment"
+            app:destination="@id/favoriteListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteListFragment"
+        android:name="com.harishd.comiclist.feature.favoriteList.FavoriteListFragment"
+        android:label="FavoriteListFragment"
+        tools:layout="@layout/fragment_favorite_comic_list">
+        <action
+            android:id="@+id/action_favoriteListFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.harishd.comiclist.feature.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search_list" >
+        <action
+            android:id="@+id/action_searchFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+
+</navigation>

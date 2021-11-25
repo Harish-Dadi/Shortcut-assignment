@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_dark"
+            android:paddingTop="15dp"
+            android:paddingBottom="@dimen/_12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/icArrowBackImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:paddingStart="@dimen/_16dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="4dp"
+                android:src="@drawable/ic_toolbar_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                style="@style/toolbarTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/icArrowBackImageView"
+                app:layout_constraintEnd_toStartOf="@id/favoriteImageView"
+                app:layout_constraintStart_toEndOf="@+id/icArrowBackImageView"
+                app:layout_constraintTop_toTopOf="@id/icArrowBackImageView" />
+
+            <ImageView
+                android:id="@+id/favoriteImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/ic_favorite_unselected"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/icArrowBackImageView"
+                app:layout_constraintEnd_toStartOf="@id/shareImageView"
+                app:layout_constraintTop_toTopOf="@id/icArrowBackImageView" />
+
+            <ImageView
+                android:id="@+id/shareImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/ic_share"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="@+id/icArrowBackImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/icArrowBackImageView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarContainer">
+
+            <ImageView
+                android:id="@+id/ic_ImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/numberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/light_black"
+                android:padding="20dp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/comic_number_details_font_size"
+                app:layout_constraintEnd_toEndOf="@id/ic_ImageView"
+                app:layout_constraintTop_toTopOf="@id/ic_ImageView" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_black"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintBottom_toBottomOf="@id/ic_ImageView"
+                app:layout_constraintEnd_toEndOf="@id/ic_ImageView"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
